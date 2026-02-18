@@ -1,7 +1,7 @@
 import { Component, signal, effect, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate, state } from '@angular/animations';
-import { translations, languageLabels, languageFlags, type Language } from './translations';
+import { translations, translationsInfantil, languageLabels, languageFlags, type Language } from './translations';
 
 @Component({
   selector: 'app-root',
@@ -25,17 +25,19 @@ import { translations, languageLabels, languageFlags, type Language } from './tr
 export class AppComponent {
   readonly currentLanguage = signal<Language>('val');
   readonly translations = translations;
+  readonly translationsInfantil = translationsInfantil;
   readonly languageLabels = languageLabels;
   readonly languageFlags = languageFlags;
   readonly isContentVisible = signal(true);
-  readonly languages: Language[] = ['val', 'es', 'en'];
+  readonly languages: Language[] = ['val', 'es', 'en', 'eu'];
 
   readonly animationState = computed(() => this.isContentVisible() ? 'visible' : 'hidden');
   readonly currentTranslation = computed(() => this.translations[this.currentLanguage()]);
+  readonly currentTranslationInfantil = computed(() => this.translationsInfantil[this.currentLanguage()]);
 
   constructor() {
     const savedLanguage = localStorage.getItem('falla-language') as Language;
-    if (savedLanguage && (savedLanguage === 'val' || savedLanguage === 'es' || savedLanguage === 'en')) {
+    if (savedLanguage && (savedLanguage === 'val' || savedLanguage === 'es' || savedLanguage === 'en' || savedLanguage === 'eu')) {
       this.currentLanguage.set(savedLanguage);
     }
 

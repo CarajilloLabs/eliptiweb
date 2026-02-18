@@ -8,7 +8,21 @@
         class="lang-btn"
         [attr.aria-label]="'Cambiar idioma a ' + languageLabels[lang]"
       >
-        <span class="flag">{{ languageFlags[lang] }}</span>
+        <span class="flag" *ngIf="lang !== 'val' && lang !== 'eu'">{{ languageFlags[lang] }}</span>
+        <span class="flag flag-val" *ngIf="lang === 'val'">
+          <svg viewBox="0 0 30 20" aria-hidden="true" focusable="false">
+            <rect width="30" height="20" fill="#0045A5" />
+            <rect x="6" width="24" height="20" fill="#FCD116" />
+            <rect x="6" y="2" width="24" height="2" fill="#C60B1E" />
+            <rect x="6" y="6" width="24" height="2" fill="#C60B1E" />
+            <rect x="6" y="10" width="24" height="2" fill="#C60B1E" />
+            <rect x="6" y="14" width="24" height="2" fill="#C60B1E" />
+            <rect x="6" y="18" width="24" height="2" fill="#C60B1E" />
+          </svg>
+        </span>
+        <span class="flag flag-eu" *ngIf="lang === 'eu'">
+          <img src="img/ikurrina.png" alt="Ikurriña" class="flag-img" />
+        </span>
         <span class="lang-label">{{ languageLabels[lang] }}</span>
       </button>
     </div>
@@ -26,18 +40,34 @@
       </div>
     </div>
 
-    <article class="critique-card" [@fadeIn]="animationState()">
-      <h1 class="critique-title">{{ currentTranslation().title }}</h1>
-      
-      <div class="separator"></div>
+    <div class="critiques-container">
+      <article class="critique-card" [@fadeIn]="animationState()">
+        <h1 class="critique-title">{{ currentTranslation().title }}</h1>
+        
+        <div class="separator"></div>
 
-      <div class="critique-content">
-        <p *ngFor="let paragraph of currentTranslation().content" class="paragraph">
-          {{ paragraph }}
-        </p>
-      </div>
+        <div class="critique-content">
+          <p *ngFor="let paragraph of currentTranslation().content" class="paragraph">
+            {{ paragraph }}
+          </p>
+        </div>
 
-      <div class="separator"></div>
-    </article>
+        <div class="separator"></div>
+      </article>
+
+      <article class="critique-card critique-card-infantil" [@fadeIn]="animationState()">
+        <h1 class="critique-title">{{ currentTranslationInfantil().title }}</h1>
+        
+        <div class="separator"></div>
+
+        <div class="critique-content">
+          <p *ngFor="let paragraph of currentTranslationInfantil().content" class="paragraph">
+            {{ paragraph }}
+          </p>
+        </div>
+
+        <div class="separator"></div>
+      </article>
+    </div>
   </main>
 </div>

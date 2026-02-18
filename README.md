@@ -83,9 +83,18 @@ La web está optimizada para:
 
 ### Netlify
 
-1. Build del proyecto: `npm run build`
-2. Arrastra la carpeta `dist/critica-falla` a Netlify
-3. O conecta tu repositorio Git para despliegue automático
+El proyecto está configurado para desplegarse automáticamente en Netlify:
+
+1. **Opción 1: Despliegue automático desde Git**
+   - Conecta tu repositorio Git a Netlify
+   - Netlify detectará automáticamente la configuración en `netlify.toml`
+   - El despliegue se realizará automáticamente en cada push
+
+2. **Opción 2: Despliegue manual**
+   - Build del proyecto: `npm run build`
+   - Arrastra la carpeta `dist/critica-falla` a Netlify
+
+**Nota:** Si encuentras errores relacionados con `@netlify/angular-runtime`, asegúrate de que el archivo `.netlify/plugins.json` esté presente y vacío (ya está incluido en el proyecto).
 
 ### Vercel
 

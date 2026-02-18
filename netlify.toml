@@ -1,6 +1,13 @@
 [build]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   publish = "dist/critica-falla"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+[context.production]
+  command = "npm ci --legacy-peer-deps && npm run build"
 
 [[redirects]]
   from = "/*"

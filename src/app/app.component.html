@@ -1,0 +1,43 @@
+<div class="app-container">
+  <header class="header">
+    <div class="language-selector">
+      <button
+        *ngFor="let lang of languages"
+        [class.active]="currentLanguage() === lang"
+        (click)="changeLanguage(lang)"
+        class="lang-btn"
+        [attr.aria-label]="'Cambiar idioma a ' + languageLabels[lang]"
+      >
+        <span class="flag">{{ languageFlags[lang] }}</span>
+        <span class="lang-label">{{ languageLabels[lang] }}</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="logo-container">
+      <div class="logo-placeholder">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="55" fill="#FF6B35" opacity="0.2"/>
+          <path d="M60 20 L75 50 L50 50 Z" fill="#FF6B35"/>
+          <path d="M60 100 L45 70 L70 70 Z" fill="#FF6B35"/>
+          <circle cx="60" cy="60" r="15" fill="#FFD23F"/>
+        </svg>
+      </div>
+    </div>
+
+    <article class="critique-card" [@fadeIn]="animationState()">
+      <h1 class="critique-title">{{ currentTranslation().title }}</h1>
+      
+      <div class="separator"></div>
+
+      <div class="critique-content">
+        <p *ngFor="let paragraph of currentTranslation().content" class="paragraph">
+          {{ paragraph }}
+        </p>
+      </div>
+
+      <div class="separator"></div>
+    </article>
+  </main>
+</div>

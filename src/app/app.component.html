@@ -43,7 +43,17 @@
     <div class="critiques-container">
       <article class="critique-card" [@fadeIn]="animationState()">
         <h1 class="critique-title">{{ currentTranslation().title }}</h1>
-        
+        <button
+          type="button"
+          class="audio-btn"
+          (click)="playMainCritique()"
+        >
+          <span class="audio-icon">
+            <span class="audio-wave"></span>
+          </span>
+          <span class="audio-label">Escuchar crítica</span>
+        </button>
+
         <div class="separator"></div>
 
         <div class="critique-content">
@@ -57,7 +67,17 @@
 
       <article class="critique-card critique-card-infantil" [@fadeIn]="animationState()">
         <h1 class="critique-title">{{ currentTranslationInfantil().title }}</h1>
-        
+        <button
+          type="button"
+          class="audio-btn"
+          (click)="playChildCritique()"
+        >
+          <span class="audio-icon">
+            <span class="audio-wave"></span>
+          </span>
+          <span class="audio-label">Escuchar crítica infantil</span>
+        </button>
+
         <div class="separator"></div>
 
         <div class="critique-content">

@@ -35,6 +35,8 @@ export class AppComponent {
   readonly currentTranslation = computed(() => this.translations[this.currentLanguage()]);
   readonly currentTranslationInfantil = computed(() => this.translationsInfantil[this.currentLanguage()]);
 
+  private voices: SpeechSynthesisVoice[] = [];
+
   constructor() {
     const savedLanguage = localStorage.getItem('falla-language') as Language;
     if (savedLanguage && (savedLanguage === 'val' || savedLanguage === 'es' || savedLanguage === 'en' || savedLanguage === 'eu')) {
@@ -44,6 +46,8 @@ export class AppComponent {
     effect(() => {
       localStorage.setItem('falla-language', this.currentLanguage());
     });
+
+    this.initVoices();
   }
 
   changeLanguage(lang: Language): void {
@@ -56,5 +60,124 @@ export class AppComponent {
         }, 50);
       }, 200);
     }
+  }
+
+  playMainCritique(): void {
+    const translation = this.currentTranslation();
+    const text = [translation.title, ...translation.content].join('. ');
+    this.playText(text);
+  }
+
+  playChildCritique(): void {
+    const translation = this.currentTranslationInfantil();
+    const text = [translation.title, ...translation.content].join('. ');
+    this.playText(text);
+  }
+
+  private playText(text: string): void {
+    const speechSynthesis = window.speechSynthesis;
+    if (!speechSynthesis) {
+      return;
+    }
+
+    speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = this.getSpeechLang(this.currentLanguage());
+    const voice = this.getVoiceForLanguage(this.currentLanguage());
+    if (voice) {
+      utterance.voice = voice;
+    }
+    speechSynthesis.speak(utterance);
+  }
+
+  private getSpeechLang(lang: Language): string {
+    if (lang === 'val') {
+      return 'ca-ES';
+    }
+    if (lang === 'es') {
+      return 'es-ES';
+    }
+    if (lang === 'en') {
+      return 'en-GB';
+    }
+    return 'eu-ES';
+  }
+
+  private initVoices(): void {
+    const speechSynthesis = window.speechSynthesis;
+    if (!speechSynthesis) {
+      return;
+    }
+
+    const loadVoices = () => {
+      this.voices = speechSynthesis.getVoices();
+    };
+
+    loadVoices();
+
+    if (this.voices.length === 0) {
+      speechSynthesis.addEventListener('voiceschanged', () => {
+        loadVoices();
+      });
+    }
+  }
+
+  private getVoiceForLanguage(lang: Language): SpeechSynthesisVoice | null {
+    if (this.voices.length === 0) {
+      return null;
+    }
+
+    const languageMap: Record<Language, string[]> = {
+      val: ['ca-ES', 'ca', 'es-ES', 'es'],
+      es: ['es-ES', 'es'],
+      en: ['en-GB', 'en-US', 'en'],
+      eu: ['eu-ES', 'eu', 'es-ES', 'es']
+    };
+
+    const preferredTags = languageMap[lang];
+
+    for (const tag of preferredTags) {
+      const candidates = this.voices.filter(voice => voice.lang.toLowerCase().startsWith(tag.toLowerCase()));
+      if (candidates.length > 0) {
+        const ranked = candidates.sort((a, b) => {
+          const scoreA = this.scoreVoice(a);
+          const scoreB = this.scoreVoice(b);
+          return scoreB - scoreA;
+        });
+        return ranked[0];
+      }
+    }
+
+    const rankedAll = [...this.voices].sort((a, b) => {
+      const scoreA = this.scoreVoice(a);
+      const scoreB = this.scoreVoice(b);
+      return scoreB - scoreA;
+    });
+
+    return rankedAll[0] ?? null;
+  }
+
+  private scoreVoice(voice: SpeechSynthesisVoice): number {
+    const name = voice.name.toLowerCase();
+    let score = 0;
+
+    if (voice.localService) {
+      score += 3;
+    }
+
+    if (name.includes('neural') || name.includes('natural')) {
+      score += 4;
+    }
+
+    if (name.includes('premium') || name.includes('enhanced')) {
+      score += 2;
+    }
+
+    if (name.includes('google') || name.includes('microsoft') || name.includes('apple')) {
+      score += 1;
+    }
+
+    return score;
   }
 }

@@ -24,7 +24,7 @@ La aplicación estará disponible en `http://localhost:4200`
 npm run build
 ```
 
-Los archivos generados estarán en la carpeta `dist/critica-falla`
+Los archivos generados estarán en la carpeta `dist/critica-falla/browser`
 
 ## 📝 Cómo Cambiar el Texto de la Crítica
 
@@ -92,7 +92,7 @@ El proyecto está configurado para desplegarse automáticamente en Netlify:
 
 2. **Opción 2: Despliegue manual**
    - Build del proyecto: `npm run build`
-   - Arrastra la carpeta `dist/critica-falla` a Netlify
+   - Arrastra la carpeta `dist/critica-falla/browser` a Netlify
 
 **Nota:** Si encuentras errores relacionados con `@netlify/angular-runtime`, asegúrate de que el archivo `.netlify/plugins.json` esté presente y vacío (ya está incluido en el proyecto).
 

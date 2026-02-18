@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/critica-falla",
+  "outputDirectory": "dist/critica-falla/browser",
   "rewrites": [
     {
       "source": "/(.*)",

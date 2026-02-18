@@ -46,12 +46,17 @@
         <button
           type="button"
           class="audio-btn"
+          [class.playing]="isAudioPlaying() && currentLanguage() === 'val'"
           (click)="playMainCritique()"
         >
           <span class="audio-icon">
             <span class="audio-wave"></span>
           </span>
-          <span class="audio-label">Escuchar crítica</span>
+          <span class="audio-label">
+            <span *ngIf="currentLanguage() === 'val' && isAudioPlaying()">Reproduint...</span>
+            <span *ngIf="currentLanguage() === 'val' && !isAudioPlaying()">Escoltar crítica</span>
+            <span *ngIf="currentLanguage() !== 'val'">Escuchar crítica</span>
+          </span>
         </button>
 
         <div class="separator"></div>

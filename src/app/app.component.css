@@ -225,6 +225,20 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
+.audio-btn.playing {
+  background: rgba(255, 107, 53, 0.2);
+  animation: audioPlaying 1.5s ease-in-out infinite;
+}
+
+@keyframes audioPlaying {
+  0%, 100% {
+    box-shadow: 0 2px 6px rgba(255, 107, 53, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.5);
+  }
+}
+
 .audio-icon {
   width: 1.5rem;
   height: 1.5rem;

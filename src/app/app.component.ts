@@ -30,12 +30,14 @@ export class AppComponent {
   readonly languageFlags = languageFlags;
   readonly isContentVisible = signal(true);
   readonly languages: Language[] = ['val', 'es', 'en', 'eu'];
+  readonly isAudioPlaying = signal(false);
 
   readonly animationState = computed(() => this.isContentVisible() ? 'visible' : 'hidden');
   readonly currentTranslation = computed(() => this.translations[this.currentLanguage()]);
   readonly currentTranslationInfantil = computed(() => this.translationsInfantil[this.currentLanguage()]);
 
   private voices: SpeechSynthesisVoice[] = [];
+  private audioPlayer: HTMLAudioElement | null = null;
 
   constructor() {
     const savedLanguage = localStorage.getItem('falla-language') as Language;
@@ -48,10 +50,37 @@ export class AppComponent {
     });
 
     this.initVoices();
+    this.initAudioPlayer();
+  }
+
+  private initAudioPlayer(): void {
+    this.audioPlayer = new Audio('/sound/rm.opus');
+    this.audioPlayer.preload = 'auto';
+    
+    this.audioPlayer.addEventListener('play', () => {
+      this.isAudioPlaying.set(true);
+    });
+    
+    this.audioPlayer.addEventListener('pause', () => {
+      this.isAudioPlaying.set(false);
+    });
+    
+    this.audioPlayer.addEventListener('ended', () => {
+      this.isAudioPlaying.set(false);
+    });
+    
+    this.audioPlayer.addEventListener('error', () => {
+      this.isAudioPlaying.set(false);
+    });
   }
 
   changeLanguage(lang: Language): void {
     if (lang !== this.currentLanguage()) {
+      if (this.audioPlayer) {
+        this.audioPlayer.pause();
+        this.audioPlayer.currentTime = 0;
+      }
+      window.speechSynthesis.cancel();
       this.isContentVisible.set(false);
       setTimeout(() => {
         this.currentLanguage.set(lang);
@@ -63,9 +92,27 @@ export class AppComponent {
   }
 
   playMainCritique(): void {
-    const translation = this.currentTranslation();
-    const text = [translation.title, ...translation.content].join('. ');
-    this.playText(text);
+    if (this.currentLanguage() === 'val' && this.audioPlayer) {
+      if (this.audioPlayer.paused) {
+        window.speechSynthesis.cancel();
+        this.audioPlayer.currentTime = 0;
+        this.audioPlayer.play().catch(err => {
+          console.error('Error al reproducir audio:', err);
+          this.isAudioPlaying.set(false);
+        });
+      } else {
+        this.audioPlayer.pause();
+        this.audioPlayer.currentTime = 0;
+      }
+    } else {
+      if (this.audioPlayer) {
+        this.audioPlayer.pause();
+        this.audioPlayer.currentTime = 0;
+      }
+      const translation = this.currentTranslation();
+      const text = [translation.title, ...translation.content].join('. ');
+      this.playText(text);
+    }
   }
 
   playChildCritique(): void {

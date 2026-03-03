@@ -48,69 +48,69 @@ export const translationsInfantil: Record<Language, Translations> = {
   val: {
     title: 'Crítica de la Falla Infantil',
     content: [
-      'Espai si penses fer-nos mal o un banderí furtar, que tenim en nostre casal del vudú la bruixa més gran.',
-      'Tinc una flor, dins del meu cor. Amb la teua màgia, troba el meu amor.',
-      'Gat negre al costat, granota al costat. Amb el foc de la falla, tot el món encantat!',
-      'Bruixeta, bruixeta, remena el calder. Amb el foc i la màgia, tot anirà bé!',
-      'Eixa mà vol clavar-nos dins d\'un gran forat. A Segona ens espenta, ¡quin zombi més malvat!',
-      'Maga, fes el teu conjur amb l\'ajuda dels ouets, que si plou en estes Falles... ¡es banyaran els ninotets!',
-      'Mil \"likes\" vull tindre, fent este ritual, a TikTok vull viure i ser el més genial.',
-      'Molt de Xat GPT i poca llibreta, com el xiquet no estudie traurà una nota ben llegeta!',
-      'La mort és l\'últim ritual, la cremà el nostre destí, entre cendres queda escrit, que tot té el seu camí.',
-      'Tira la moneda, que el ritual és clar: la font arreplega i tu a treballar.',
-      'Un trèvol he trobat, i la sort m\'ha donat. Quatre fulles de color, per a ser el millor!',
-      'Tinc una moneda, que la por se\'n vaja. Butxaca plena, fora la pena!'
+      'Espai si penses fer-nos mal<br>o un banderí furtar,<br>que tenim en nostre casal<br>del vudú la bruixa més gran.',
+      'Tinc una flor,<br>dins del meu cor.<br>Amb la teua màgia,<br>troba el meu amor.',
+      'Gat negre al costat,<br>granota al costat.<br>Amb el foc de la falla,<br>tot el món encantat!',
+      'Bruixeta, bruixeta,<br>remena el calder.<br>Amb el foc i la màgia,<br>tot anirà bé!',
+      'Eixa mà vol clavar-nos,<br>dins d\'un gran forat.<br>A Segona ens espenta,<br>¡quin zombi més malvat!',
+      'Maga, fes el teu conjur<br>amb l\'ajuda dels ouets,<br>que si plou en estes Falles...<br>¡es banyaran els ninotets!',
+      'Mil \"likes\" vull tindre,<br>fent este ritual,<br>a TikTok vull viure<br>i ser el més genial.',
+      'Molt de Xat GPT<br>i poca llibreta,<br>com el xiquet no estudie<br>traurà una nota ben llegeta!',
+      'La mort és l\'últim ritual,<br>la cremà el nostre destí,<br>entre cendres queda escrit,<br>que tot té el seu camí.',
+      'Tira la moneda,<br>que el ritual és clar:<br>la font arreplega<br>i tu a treballar.',
+      'Un trèvol he trobat,<br>i la sort m\'ha donat.<br>Quatre fulles de color,<br>per a ser el millor!',
+      'Tinc una moneda,<br>que la por se\'n vaja.<br>Butxaca plena,<br>fora la pena!'
     ]
   },
   es: {
     title: 'Crítica de la Falla Infantil',
     content: [
-      'Espacio si piensas hacernos daño o un banderín robar, que en nuestro casal tenemos a la bruja del vudú más grande.',
-      'Tengo una flor dentro de mi corazón. Con tu magia, encuentra mi amor.',
-      'Gato negro al lado, rana a mi lado. Con el fuego de la falla, todo el mundo encantado.',
-      'Brujita, brujita, remueve el caldero. Con el fuego y la magia, todo irá bien.',
-      'Esa mano quiere meternos dentro de un gran agujero. A Segunda nos empuja, ¡qué zombi más perverso!',
-      'Maga, haz tu conjuro con la ayuda de los huevecitos, que si llueve en estas Fallas... ¡se mojarán los ninotitos!',
-      'Mil \"likes\" quiero tener, haciendo este ritual; en TikTok quiero vivir y ser el más genial.',
-      'Mucho Chat GPT y poca libreta; si el niño no estudia sacará una nota bien discreta.',
-      'La muerte es el último ritual, la cremà nuestro destino; entre cenizas queda escrito que todo tiene su camino.',
-      'Lanza la moneda, que el ritual está claro: la fuente la recoge y tú a trabajar.',
-      'Un trébol he encontrado y la suerte me ha entregado. Cuatro hojas de color para ser el mejor.',
-      'Tengo una moneda para que el miedo se vaya. Bolsillo lleno, fuera la pena.'
+      'Espacio si piensas hacernos daño<br>o un banderín robar,<br>que en nuestro casal tenemos<br>a la bruja del vudú más grande.',
+      'Tengo una flor<br>dentro de mi corazón.<br>Con tu magia,<br>encuentra mi amor.',
+      'Gato negro al lado,<br>rana a mi lado.<br>Con el fuego de la falla,<br>todo el mundo encantado.',
+      'Brujita, brujita,<br>remueve el caldero.<br>Con el fuego y la magia,<br>todo irá bien.',
+      'Esa mano quiere meternos<br>dentro de un gran agujero.<br>A Segunda nos empuja,<br>¡qué zombi más perverso!',
+      'Maga, haz tu conjuro<br>con la ayuda de los huevecitos,<br>que si llueve en estas Fallas...<br>¡se mojarán los ninotitos!',
+      'Mil \"likes\" quiero tener,<br>haciendo este ritual;<br>en TikTok quiero vivir<br>y ser el más genial.',
+      'Mucho Chat GPT<br>y poca libreta;<br>si el niño no estudia<br>sacará una nota bien discreta.',
+      'La muerte es el último ritual,<br>la cremà nuestro destino;<br>entre cenizas queda escrito<br>que todo tiene su camino.',
+      'Lanza la moneda,<br>que el ritual está claro:<br>la fuente la recoge<br>y tú a trabajar.',
+      'Un trébol he encontrado<br>y la suerte me ha entregado.<br>Cuatro hojas de color<br>para ser el mejor.',
+      'Tengo una moneda<br>para que el miedo se vaya.<br>Bolsillo lleno,<br>fuera la pena.'
     ]
   },
   en: {
     title: 'Children\'s Falla Critique',
     content: [
-      'Space out if you plan to harm us or steal a little flag, in our falla hall we keep the greatest voodoo witch of all.',
-      'I have a flower deep inside my heart. With your magic, help me find my love.',
-      'Black cat by my side, a frog by my side. With the fire of the falla, all the world is spellbound.',
-      'Little witch, little witch, stir up the cauldron. With the fire and the magic, everything will be fine.',
-      'That hand wants to push us into a giant hole. It sends us down to Second, what an evil zombie.',
-      'Sorceress, cast your spell with the help of the little eggs, if it rains in these Fallas, all the little ninots will get wet.',
-      'A thousand \"likes\" I want to get by doing this ritual; on TikTok I want to live and be the coolest of all.',
-      'So much Chat GPT and hardly any notebook; if the child does not study, the grade will be quite poor.',
-      'Death is the final ritual, the cremà is our fate; written down among the ashes is that everything has its own way.',
-      'Throw in the coin, for the ritual is clear: the fountain gathers it, and you go off to work.',
-      'I have found a clover and it has given me luck; four colored leaves to help me be the best.',
-      'I have a coin so that fear will go away; with a pocket full, sadness goes away.'
+      'Space out if you plan to harm us<br>or steal a little flag,<br>in our falla hall we keep<br>the greatest voodoo witch of all.',
+      'I have a flower<br>deep inside my heart.<br>With your magic,<br>help me find my love.',
+      'Black cat by my side,<br>a frog by my side.<br>With the fire of the falla,<br>all the world is spellbound.',
+      'Little witch, little witch,<br>stir up the cauldron.<br>With the fire and the magic,<br>everything will be fine.',
+      'That hand wants to push us<br>into a giant hole.<br>It sends us down to Second,<br>what an evil zombie.',
+      'Sorceress, cast your spell<br>with the help of the little eggs,<br>if it rains in these Fallas,<br>all the little ninots will get wet.',
+      'A thousand \"likes\" I want to get<br>by doing this ritual;<br>on TikTok I want to live<br>and be the coolest of all.',
+      'So much Chat GPT<br>and hardly any notebook;<br>if the child does not study,<br>the grade will be quite poor.',
+      'Death is the final ritual,<br>the cremà is our fate;<br>written down among the ashes<br>is that everything has its own way.',
+      'Throw in the coin,<br>for the ritual is clear:<br>the fountain gathers it,<br>and you go off to work.',
+      'I have found a clover<br>and it has given me luck;<br>four colored leaves<br>to help me be the best.',
+      'I have a coin<br>so that fear will go away;<br>with a pocket full,<br>sadness goes away.'
     ]
   },
   eu: {
     title: 'Haurren Fallaren Kritika',
     content: [
-      'Toki egin kaltea egin nahi badiguzu edo banderín bat lapurtu, gure casal-ean vuduaren sorgin handiena dugulako.',
-      'Lore bat daukat bihotzaren barruan. Zure magiarekin, aurki ezazu nire maitasuna.',
-      'Katu beltza alboan, igel bat alboan. Fallaren suarekin, mundu osoa sorginduta.',
-      'Sorgintxo, sorgintxo, nahasi kazola. Suarekin eta magiarekin, dena ondo joango da.',
-      'Esku horrek zulo handi batean sartu nahi gaitu. Bigarrenera bultzatzen gaitu, zein zonbi gaiztoa.',
-      'Maga, egin ezazu zure sorginkeria arrautzatxoen laguntzaz; Falles hauetan euria egiten badu, ninot txikitxoak guztiz bustiko dira.',
-      'Mila \"like\" eduki nahi ditut erritu hau eginez; TikTok-en bizi nahi dut eta guztietatik onena izan.',
-      'Chat GPT asko eta koaderno gutxi; umeak ez badu ikasten, nota benetan eskasa aterako du.',
-      'Heriotza da azken errituala, cremà da gure patua; errautsetan idatzita geratzen da gauza guztiek beren bidea dutela.',
-      'Bota txanpona, errituala argi dago: iturriak jasotzen du eta zu lanera.',
-      'Hirusta bat aurkitu dut eta zortea eman dit; lau hosto koloretsu onena izan nadin.',
-      'Txanpon bat daukat beldurra joan dadin; poltsikoa beteta, atsekabea kanpora.'
+      'Toki egin kaltea egin nahi badiguzu<br>edo banderín bat lapurtu,<br>gure casal-ean dugu<br>vuduaren sorgin handiena.',
+      'Lore bat daukat<br>bihotzaren barruan.<br>Zure magiarekin,<br>aurki ezazu nire maitasuna.',
+      'Katu beltza alboan,<br>igel bat alboan.<br>Fallaren suarekin,<br>mundu osoa sorginduta.',
+      'Sorgintxo, sorgintxo,<br>nahasi kazola.<br>Suarekin eta magiarekin,<br>dena ondo joango da.',
+      'Esku horrek gurekin nahi du<br>zulo handi batean amaitu.<br>Bigarrenera bultzatzen gaitu,<br>zein zonbi gaiztoa, ikusi!',
+      'Maga, egin ezazu zure sorginkeria<br>arrautzatxoen laguntzaz;<br>Falles hauetan euria egiten badu,<br>ninot txikitxoak guztiz bustiko dira.',
+      'Mila \"like\" eduki nahi ditut<br>erritu hau eginez;<br>TikTok-en bizi nahi dut<br>eta guztietatik onena izan.',
+      'Chat GPT asko<br>eta koaderno gutxi;<br>umeak ez badu ikasten,<br>nota benetan eskasa aterako du.',
+      'Heriotza da azken errituala,<br>cremà da gure patua;<br>errautsetan idatzita geratzen da<br>gauza guztiek beren bidea dutela.',
+      'Bota txanpona,<br>errituala argi dago:<br>iturriak jasotzen du<br>eta zu lanera.',
+      'Hirusta bat aurkitu dut<br>eta zortea eman dit;<br>lau hosto koloretsu<br>onena izan nadin.',
+      'Txanpon bat daukat<br>beldurra joan dadin;<br>poltsikoa beteta,<br>atsekabea kanpora.'
     ]
   }
 };

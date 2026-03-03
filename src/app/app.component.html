@@ -88,9 +88,11 @@
         <div class="separator"></div>
 
         <div class="critique-content">
-          <p *ngFor="let paragraph of currentTranslationInfantil().content" class="paragraph">
-            {{ paragraph }}
-          </p>
+          <p
+            *ngFor="let paragraph of currentTranslationInfantil().content"
+            class="paragraph"
+            [innerHTML]="paragraph"
+          ></p>
         </div>
 
         <div class="separator"></div>

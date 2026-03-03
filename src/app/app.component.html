@@ -31,12 +31,7 @@
   <main class="main-content">
     <div class="logo-container">
       <div class="logo-placeholder">
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="60" cy="60" r="55" fill="#FF6B35" opacity="0.2"/>
-          <path d="M60 20 L75 50 L50 50 Z" fill="#FF6B35"/>
-          <path d="M60 100 L45 70 L70 70 Z" fill="#FF6B35"/>
-          <circle cx="60" cy="60" r="15" fill="#FFD23F"/>
-        </svg>
+        <img src="img/elipti.png" alt="Falla Elipti" class="logo-img" />
       </div>
     </div>
 
@@ -55,7 +50,9 @@
           <span class="audio-label">
             <span *ngIf="currentLanguage() === 'val' && isAudioPlaying()">Reproduint...</span>
             <span *ngIf="currentLanguage() === 'val' && !isAudioPlaying()">Escoltar crítica</span>
-            <span *ngIf="currentLanguage() !== 'val'">Escuchar crítica</span>
+            <span *ngIf="currentLanguage() === 'es'">Escuchar crítica</span>
+            <span *ngIf="currentLanguage() === 'en'">Listen to critique</span>
+            <span *ngIf="currentLanguage() === 'eu'">Kritika entzun</span>
           </span>
         </button>
 
@@ -80,7 +77,12 @@
           <span class="audio-icon">
             <span class="audio-wave"></span>
           </span>
-          <span class="audio-label">Escuchar crítica infantil</span>
+          <span class="audio-label">
+            <span *ngIf="currentLanguage() === 'val'">Escoltar crítica infantil</span>
+            <span *ngIf="currentLanguage() === 'es'">Escuchar crítica infantil</span>
+            <span *ngIf="currentLanguage() === 'en'">Listen to children&#39;s critique</span>
+            <span *ngIf="currentLanguage() === 'eu'">Haurren kritika entzun</span>
+          </span>
         </button>
 
         <div class="separator"></div>

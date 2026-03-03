@@ -48,37 +48,69 @@ export const translationsInfantil: Record<Language, Translations> = {
   val: {
     title: 'Crítica de la Falla Infantil',
     content: [
-      'La falla infantil és el somriure de la nostra festa, el lloc on la innocència i la creativitat es donen la mà per crear màgia. Aquests ninots més petits porten amb ells la il·lusió dels més menuts, però també la saviesa de qui sap que la festa és per a tots.',
-      'En cada detall de la falla infantil hi ha una lliçó: que la tradició es transmet de generació en generació, que els valors que ens uneixen com a comunitat també poden ser explicats amb paraules senzilles i colors vius. És la manera en què els nens i nenes aprenen a estimar la seva cultura mentre juguen.',
-      'Aquest any, la nostra falla infantil ens recorda que la festa fallera és un univers complet on hi ha lloc per a la reflexió seriosa i per al joc alegre. Els artistes que creen aquestes obres saben que estan plantant la llavor de l\'amor per la tradició en els cors dels més joves.',
-      'Que aquesta cremà infantil sigui el moment en què els nostres fills i filles comprenen que la festa és seva també, que la tradició els pertany i que, com les flames que cremen els ninots, la passió per la cultura fallera mai s\'apaga.'
+      'Espai si penses fer-nos mal o un banderí furtar, que tenim en nostre casal del vudú la bruixa més gran.',
+      'Tinc una flor, dins del meu cor. Amb la teua màgia, troba el meu amor.',
+      'Gat negre al costat, granota al costat. Amb el foc de la falla, tot el món encantat!',
+      'Bruixeta, bruixeta, remena el calder. Amb el foc i la màgia, tot anirà bé!',
+      'Eixa mà vol clavar-nos dins d\'un gran forat. A Segona ens espenta, ¡quin zombi més malvat!',
+      'Maga, fes el teu conjur amb l\'ajuda dels ouets, que si plou en estes Falles... ¡es banyaran els ninotets!',
+      'Mil \"likes\" vull tindre, fent este ritual, a TikTok vull viure i ser el més genial.',
+      'Molt de Xat GPT i poca llibreta, com el xiquet no estudie traurà una nota ben llegeta!',
+      'La mort és l\'últim ritual, la cremà el nostre destí, entre cendres queda escrit, que tot té el seu camí.',
+      'Tira la moneda, que el ritual és clar: la font arreplega i tu a treballar.',
+      'Un trèvol he trobat, i la sort m\'ha donat. Quatre fulles de color, per a ser el millor!',
+      'Tinc una moneda, que la por se\'n vaja. Butxaca plena, fora la pena!'
     ]
   },
   es: {
     title: 'Crítica de la Falla Infantil',
     content: [
-      'La falla infantil es la sonrisa de nuestra fiesta, el lugar donde la inocencia y la creatividad se dan la mano para crear magia. Estos ninots más pequeños llevan consigo la ilusión de los más pequeños, pero también la sabiduría de quien sabe que la fiesta es para todos.',
-      'En cada detalle de la falla infantil hay una lección: que la tradición se transmite de generación en generación, que los valores que nos unen como comunidad también pueden ser explicados con palabras sencillas y colores vivos. Es la manera en que los niños y niñas aprenden a amar su cultura mientras juegan.',
-      'Este año, nuestra falla infantil nos recuerda que la fiesta fallera es un universo completo donde hay lugar para la reflexión seria y para el juego alegre. Los artistas que crean estas obras saben que están plantando la semilla del amor por la tradición en los corazones de los más jóvenes.',
-      'Que esta cremà infantil sea el momento en que nuestros hijos e hijas comprenden que la fiesta es suya también, que la tradición les pertenece y que, como las llamas que queman los ninots, la pasión por la cultura fallera nunca se apaga.'
+      'Espacio si piensas hacernos daño o un banderín robar, que en nuestro casal tenemos a la bruja del vudú más grande.',
+      'Tengo una flor dentro de mi corazón. Con tu magia, encuentra mi amor.',
+      'Gato negro al lado, rana a mi lado. Con el fuego de la falla, todo el mundo encantado.',
+      'Brujita, brujita, remueve el caldero. Con el fuego y la magia, todo irá bien.',
+      'Esa mano quiere meternos dentro de un gran agujero. A Segunda nos empuja, ¡qué zombi más perverso!',
+      'Maga, haz tu conjuro con la ayuda de los huevecitos, que si llueve en estas Fallas... ¡se mojarán los ninotitos!',
+      'Mil \"likes\" quiero tener, haciendo este ritual; en TikTok quiero vivir y ser el más genial.',
+      'Mucho Chat GPT y poca libreta; si el niño no estudia sacará una nota bien discreta.',
+      'La muerte es el último ritual, la cremà nuestro destino; entre cenizas queda escrito que todo tiene su camino.',
+      'Lanza la moneda, que el ritual está claro: la fuente la recoge y tú a trabajar.',
+      'Un trébol he encontrado y la suerte me ha entregado. Cuatro hojas de color para ser el mejor.',
+      'Tengo una moneda para que el miedo se vaya. Bolsillo lleno, fuera la pena.'
     ]
   },
   en: {
     title: 'Children\'s Falla Critique',
     content: [
-      'The children\'s falla is the smile of our celebration, the place where innocence and creativity join hands to create magic. These smaller ninots carry with them the wonder of the little ones, but also the wisdom of those who know that the celebration is for everyone.',
-      'In every detail of the children\'s falla there is a lesson: that tradition is passed from generation to generation, that the values that unite us as a community can also be explained with simple words and bright colors. It is how children learn to love their culture while playing.',
-      'This year, our children\'s falla reminds us that the falla celebration is a complete universe where there is room for serious reflection and joyful play. The artists who create these works know they are planting the seed of love for tradition in the hearts of the youngest.',
-      'May this children\'s cremà be the moment when our sons and daughters understand that the celebration is also theirs, that tradition belongs to them, and that, like the flames that burn the ninots, the passion for falla culture never goes out.'
+      'Space out if you plan to harm us or steal a little flag, in our falla hall we keep the greatest voodoo witch of all.',
+      'I have a flower deep inside my heart. With your magic, help me find my love.',
+      'Black cat by my side, a frog by my side. With the fire of the falla, all the world is spellbound.',
+      'Little witch, little witch, stir up the cauldron. With the fire and the magic, everything will be fine.',
+      'That hand wants to push us into a giant hole. It sends us down to Second, what an evil zombie.',
+      'Sorceress, cast your spell with the help of the little eggs, if it rains in these Fallas, all the little ninots will get wet.',
+      'A thousand \"likes\" I want to get by doing this ritual; on TikTok I want to live and be the coolest of all.',
+      'So much Chat GPT and hardly any notebook; if the child does not study, the grade will be quite poor.',
+      'Death is the final ritual, the cremà is our fate; written down among the ashes is that everything has its own way.',
+      'Throw in the coin, for the ritual is clear: the fountain gathers it, and you go off to work.',
+      'I have found a clover and it has given me luck; four colored leaves to help me be the best.',
+      'I have a coin so that fear will go away; with a pocket full, sadness goes away.'
     ]
   },
   eu: {
     title: 'Haurren Fallaren Kritika',
     content: [
-      'Haurren falla gure ospakizunaren irribarrea da, inozentzia eta sormenak eskua ematen dioten tokia magia sortzeko. Ninot txikiago hauek txikien harridura daramate, baina baita ospakizuna guztiontzat dela dakitenen jakinduria ere.',
-      'Haurren fallaren xehetasun bakoitzean ikasgai bat dago: tradizioa belaunaldiz belaunaldi transmititzen dela, komunitate gisa batzen gaituzten balioak hitz sinpleekin eta kolore biziekin ere azal daitezkeela. Haurrek beren kultura maite ikasteko modua da jolasean.',
-      'Urte honetan, gure haurren fallak gogorarazten digu falla ospakizuna unibertso osoa dela, non gogoeta serioetarako eta jolas alaietarako lekua dagoen. Lan hauek sortzen dituzten artistek dakite tradizioarekiko maitasunaren hazia landatzen ari direla gazteenen bihotzetan.',
-      'Haurren cremà hau unea izan bedi gure seme-alabek ospakizuna ere berena dela ulertzen dutenean, tradizioa berena dela, eta ninotak erretzen dituzten garrak bezala, falla kulturarekiko pasioa ez dela inoiz itzaltzen.'
+      'Toki egin kaltea egin nahi badiguzu edo banderín bat lapurtu, gure casal-ean vuduaren sorgin handiena dugulako.',
+      'Lore bat daukat bihotzaren barruan. Zure magiarekin, aurki ezazu nire maitasuna.',
+      'Katu beltza alboan, igel bat alboan. Fallaren suarekin, mundu osoa sorginduta.',
+      'Sorgintxo, sorgintxo, nahasi kazola. Suarekin eta magiarekin, dena ondo joango da.',
+      'Esku horrek zulo handi batean sartu nahi gaitu. Bigarrenera bultzatzen gaitu, zein zonbi gaiztoa.',
+      'Maga, egin ezazu zure sorginkeria arrautzatxoen laguntzaz; Falles hauetan euria egiten badu, ninot txikitxoak guztiz bustiko dira.',
+      'Mila \"like\" eduki nahi ditut erritu hau eginez; TikTok-en bizi nahi dut eta guztietatik onena izan.',
+      'Chat GPT asko eta koaderno gutxi; umeak ez badu ikasten, nota benetan eskasa aterako du.',
+      'Heriotza da azken errituala, cremà da gure patua; errautsetan idatzita geratzen da gauza guztiek beren bidea dutela.',
+      'Bota txanpona, errituala argi dago: iturriak jasotzen du eta zu lanera.',
+      'Hirusta bat aurkitu dut eta zortea eman dit; lau hosto koloretsu onena izan nadin.',
+      'Txanpon bat daukat beldurra joan dadin; poltsikoa beteta, atsekabea kanpora.'
     ]
   }
 };

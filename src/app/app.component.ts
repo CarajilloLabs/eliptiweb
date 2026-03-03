@@ -105,6 +105,18 @@ export class AppComponent {
         this.audioPlayer.currentTime = 0;
       }
     } else {
+      const speechSynthesis = window.speechSynthesis;
+      if (!speechSynthesis) {
+        return;
+      }
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+        return;
+      }
+      if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+        return;
+      }
       if (this.audioPlayer) {
         this.audioPlayer.pause();
         this.audioPlayer.currentTime = 0;
@@ -116,6 +128,18 @@ export class AppComponent {
   }
 
   playChildCritique(): void {
+    const speechSynthesis = window.speechSynthesis;
+    if (!speechSynthesis) {
+      return;
+    }
+    if (speechSynthesis.speaking && !speechSynthesis.paused) {
+      speechSynthesis.pause();
+      return;
+    }
+    if (speechSynthesis.paused) {
+      speechSynthesis.resume();
+      return;
+    }
     const translation = this.currentTranslationInfantil();
     const text = [translation.title, ...translation.content].join('. ');
     this.playText(text);

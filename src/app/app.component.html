@@ -38,6 +38,7 @@
     <div class="critiques-container">
       <article class="critique-card" [@fadeIn]="animationState()">
         <h1 class="critique-title">{{ currentTranslation().title }}</h1>
+
         <button
           type="button"
           class="audio-btn"
@@ -57,6 +58,26 @@
         </button>
 
         <div class="separator"></div>
+
+        <section class="falla-intro" *ngIf="currentMajorIntroduction().content.length">
+          <div class="logo-container intro-logo-container">
+            <div class="logo-placeholder">
+              <img
+                [src]="currentMajorIntroduction().logoSrc"
+                [alt]="currentMajorIntroduction().logoAlt"
+                class="logo-img"
+              />
+            </div>
+          </div>
+
+          <div class="critique-content">
+            <p *ngFor="let paragraph of currentMajorIntroduction().content" class="paragraph">
+              {{ paragraph }}
+            </p>
+          </div>
+
+          <div class="separator"></div>
+        </section>
 
         <div class="critique-content">
           <p *ngFor="let paragraph of currentTranslation().content" class="paragraph">
@@ -86,6 +107,26 @@
         </button>
 
         <div class="separator"></div>
+
+        <section class="falla-intro falla-intro-infantil" *ngIf="currentChildIntroduction().content.length">
+          <div class="logo-container intro-logo-container">
+            <div class="logo-placeholder">
+              <img
+                [src]="currentChildIntroduction().logoSrc"
+                [alt]="currentChildIntroduction().logoAlt"
+                class="logo-img"
+              />
+            </div>
+          </div>
+
+          <div class="critique-content">
+            <p *ngFor="let paragraph of currentChildIntroduction().content" class="paragraph">
+              {{ paragraph }}
+            </p>
+          </div>
+
+          <div class="separator"></div>
+        </section>
 
         <div class="critique-content">
           <p

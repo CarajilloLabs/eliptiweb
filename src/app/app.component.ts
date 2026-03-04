@@ -1,7 +1,7 @@
 import { Component, signal, effect, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate, state } from '@angular/animations';
-import { translations, translationsInfantil, languageLabels, languageFlags, type Language } from './translations';
+import { translations, translationsInfantil, languageLabels, languageFlags, majorIntroductions, childIntroductions, type Language } from './translations';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +26,8 @@ export class AppComponent {
   readonly currentLanguage = signal<Language>('val');
   readonly translations = translations;
   readonly translationsInfantil = translationsInfantil;
+  readonly majorIntroductions = majorIntroductions;
+  readonly childIntroductions = childIntroductions;
   readonly languageLabels = languageLabels;
   readonly languageFlags = languageFlags;
   readonly isContentVisible = signal(true);
@@ -35,6 +37,8 @@ export class AppComponent {
   readonly animationState = computed(() => this.isContentVisible() ? 'visible' : 'hidden');
   readonly currentTranslation = computed(() => this.translations[this.currentLanguage()]);
   readonly currentTranslationInfantil = computed(() => this.translationsInfantil[this.currentLanguage()]);
+  readonly currentMajorIntroduction = computed(() => this.majorIntroductions[this.currentLanguage()]);
+  readonly currentChildIntroduction = computed(() => this.childIntroductions[this.currentLanguage()]);
 
   private voices: SpeechSynthesisVoice[] = [];
   private audioPlayer: HTMLAudioElement | null = null;
@@ -92,39 +96,27 @@ export class AppComponent {
   }
 
   playMainCritique(): void {
-    if (this.currentLanguage() === 'val' && this.audioPlayer) {
-      if (this.audioPlayer.paused) {
-        window.speechSynthesis.cancel();
-        this.audioPlayer.currentTime = 0;
-        this.audioPlayer.play().catch(err => {
-          console.error('Error al reproducir audio:', err);
-          this.isAudioPlaying.set(false);
-        });
-      } else {
-        this.audioPlayer.pause();
-        this.audioPlayer.currentTime = 0;
-      }
-    } else {
-      const speechSynthesis = window.speechSynthesis;
-      if (!speechSynthesis) {
-        return;
-      }
-      if (speechSynthesis.speaking && !speechSynthesis.paused) {
-        speechSynthesis.pause();
-        return;
-      }
-      if (speechSynthesis.paused) {
-        speechSynthesis.resume();
-        return;
-      }
-      if (this.audioPlayer) {
-        this.audioPlayer.pause();
-        this.audioPlayer.currentTime = 0;
-      }
-      const translation = this.currentTranslation();
-      const text = this.buildPlainText(translation.title, translation.content);
-      this.playText(text);
+    const speechSynthesis = window.speechSynthesis;
+    if (!speechSynthesis) {
+      return;
     }
+    if (speechSynthesis.speaking && !speechSynthesis.paused) {
+      speechSynthesis.pause();
+      return;
+    }
+    if (speechSynthesis.paused) {
+      speechSynthesis.resume();
+      return;
+    }
+    if (this.audioPlayer) {
+      this.audioPlayer.pause();
+      this.audioPlayer.currentTime = 0;
+    }
+    const translation = this.currentTranslation();
+    const introduction = this.currentMajorIntroduction();
+    const allParts = [...introduction.content, ...translation.content];
+    const text = this.buildPlainText(translation.title, allParts);
+    this.playText(text);
   }
 
   playChildCritique(): void {

@@ -122,7 +122,7 @@ export class AppComponent {
         this.audioPlayer.currentTime = 0;
       }
       const translation = this.currentTranslation();
-      const text = [translation.title, ...translation.content].join('. ');
+      const text = this.buildPlainText(translation.title, translation.content);
       this.playText(text);
     }
   }
@@ -141,8 +141,17 @@ export class AppComponent {
       return;
     }
     const translation = this.currentTranslationInfantil();
-    const text = [translation.title, ...translation.content].join('. ');
+    const text = this.buildPlainText(translation.title, translation.content);
     this.playText(text);
+  }
+
+  private buildPlainText(title: string, parts: string[]): string {
+    const cleaned = parts.map(p =>
+      p
+        .replace(/<br\s*\/?>/gi, '. ')
+        .replace(/<[^>]+>/g, '')
+    );
+    return [title, ...cleaned].join('. ');
   }
 
   private playText(text: string): void {

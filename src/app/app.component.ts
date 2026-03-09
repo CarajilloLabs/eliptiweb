@@ -1,7 +1,7 @@
 import { Component, signal, effect, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate, state } from '@angular/animations';
-import { translations, translationsInfantil, languageLabels, languageFlags, majorIntroductions, childIntroductions, type Language } from './translations';
+import { translations, translationsInfantil, languageLabels, languageFlags, majorIntroductions, childIntroductions, majorMeta, childMeta, type Language } from './translations';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +28,8 @@ export class AppComponent {
   readonly translationsInfantil = translationsInfantil;
   readonly majorIntroductions = majorIntroductions;
   readonly childIntroductions = childIntroductions;
+  readonly majorMeta = majorMeta;
+  readonly childMeta = childMeta;
   readonly languageLabels = languageLabels;
   readonly languageFlags = languageFlags;
   readonly isContentVisible = signal(true);
@@ -39,6 +41,8 @@ export class AppComponent {
   readonly currentTranslationInfantil = computed(() => this.translationsInfantil[this.currentLanguage()]);
   readonly currentMajorIntroduction = computed(() => this.majorIntroductions[this.currentLanguage()]);
   readonly currentChildIntroduction = computed(() => this.childIntroductions[this.currentLanguage()]);
+  readonly currentMajorMeta = computed(() => this.majorMeta[this.currentLanguage()]);
+  readonly currentChildMeta = computed(() => this.childMeta[this.currentLanguage()]);
 
   private voices: SpeechSynthesisVoice[] = [];
   private audioPlayer: HTMLAudioElement | null = null;

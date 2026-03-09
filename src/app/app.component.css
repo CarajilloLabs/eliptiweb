@@ -214,6 +214,40 @@
   margin-bottom: 0;
 }
 
+.falla-text-with-image {
+  position: relative;
+}
+
+.falla-inline-image {
+  float: right;
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.falla-inline-img {
+  display: block;
+  max-width: 200px;
+  height: auto;
+}
+
+.falla-meta-line {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem 0;
+}
+
+.falla-meta-explanation {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.falla-intro .logo-container {
+  margin-bottom: 0;
+}
+
 .audio-btn {
   display: inline-flex;
   align-items: center;
@@ -331,6 +365,11 @@
     font-size: 1.125rem;
   }
 
+  .falla-meta-line,
+  .falla-meta-explanation {
+    font-size: 1rem;
+  }
+
   .lang-btn {
     padding: 0.625rem 1.25rem;
     font-size: 1rem;
@@ -400,5 +439,15 @@
 
   .logo-img {
     max-width: 90px;
+  }
+
+  .falla-inline-image {
+    float: none;
+    margin: 0 0 1rem 0;
+    text-align: center;
+  }
+
+  .falla-inline-img {
+    max-width: 120px;
   }
 }

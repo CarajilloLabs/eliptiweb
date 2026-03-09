@@ -11,6 +11,15 @@ export interface FallaIntroduction {
   content: string[];
 }
 
+export interface FallaMeta {
+  monument: string;
+  lemaLabel: string;
+  artistLabel: string;
+  explanationLabel: string;
+  lema: string;
+  artist: string;
+}
+
 export const majorIntroductions: Record<Language, FallaIntroduction> = {
   val: {
     logoSrc: 'img/afonats.png',
@@ -110,6 +119,76 @@ export const childIntroductions: Record<Language, FallaIntroduction> = {
       'Guztiek erabiltzen dituzte erritu magiko, zentzugabe edo ezinezkoak nahi dutena lortzeko, eta azkenean deskubritzen dute, jainkoei edo ez dezala euririk egin santuari oihukatu arren, onena ahalegina, poza eta Falletako giro alaia dela.',
       'Kolorez beteriko ninotekin, kritika atseginarekin eta irribarre askorekin, falla honek gogorarazten digu bizitza ez dela erritu perfektua, baina suaren, festaren eta adiskidetzaren artean, beti bihurtzen dela magikoa Falletan.'
     ]
+  }
+};
+
+export const majorMeta: Record<Language, FallaMeta> = {
+  val: {
+    monument: 'MONUMENT MAJOR.',
+    lemaLabel: 'LEMA:',
+    artistLabel: 'ARTISTA:',
+    explanationLabel: 'EXPLICACIÓ:',
+    lema: 'Afonats',
+    artist: 'Palacio I Serra'
+  },
+  es: {
+    monument: 'MONUMENTO MAYOR.',
+    lemaLabel: 'LEMA:',
+    artistLabel: 'ARTISTA:',
+    explanationLabel: 'EXPLICACIÓN:',
+    lema: 'Afonats',
+    artist: 'Palacio I Serra'
+  },
+  en: {
+    monument: 'MAIN MONUMENT.',
+    lemaLabel: 'MOTTO:',
+    artistLabel: 'ARTIST:',
+    explanationLabel: 'EXPLANATION:',
+    lema: 'Afonats',
+    artist: 'Palacio I Serra'
+  },
+  eu: {
+    monument: 'MONUMENTU NAGUSIA.',
+    lemaLabel: 'LELOA:',
+    artistLabel: 'ARTISTA:',
+    explanationLabel: 'AZALPENA:',
+    lema: 'Afonats',
+    artist: 'Palacio I Serra'
+  }
+};
+
+export const childMeta: Record<Language, FallaMeta> = {
+  val: {
+    monument: 'MONUMENT INFANTIL.',
+    lemaLabel: 'LEMA:',
+    artistLabel: 'ARTISTA:',
+    explanationLabel: 'EXPLICACIÓ:',
+    lema: 'Rituals',
+    artist: 'Barraques Art'
+  },
+  es: {
+    monument: 'MONUMENTO INFANTIL.',
+    lemaLabel: 'LEMA:',
+    artistLabel: 'ARTISTA:',
+    explanationLabel: 'EXPLICACIÓN:',
+    lema: 'Rituals',
+    artist: 'Barraques Art'
+  },
+  en: {
+    monument: 'CHILDREN\'S MONUMENT.',
+    lemaLabel: 'MOTTO:',
+    artistLabel: 'ARTIST:',
+    explanationLabel: 'EXPLANATION:',
+    lema: 'Rituals',
+    artist: 'Barraques Art'
+  },
+  eu: {
+    monument: 'MONUMENTU INFANTILA.',
+    lemaLabel: 'LELOA:',
+    artistLabel: 'ARTISTA:',
+    explanationLabel: 'AZALPENA:',
+    lema: 'Rituals',
+    artist: 'Barraques Art'
   }
 };
 

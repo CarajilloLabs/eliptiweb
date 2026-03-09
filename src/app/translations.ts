@@ -315,3 +315,10 @@ export const languageFlags: Record<Language, string> = {
   en: '🇬🇧',
   eu: '🏴'
 };
+
+export const footerTexts: Record<Language, string> = {
+  val: 'Realitzat per',
+  es: 'Realizado por',
+  en: 'Made by',
+  eu: 'Egina'
+};

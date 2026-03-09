@@ -1,7 +1,18 @@
-import { Component, signal, effect, computed } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate, state } from '@angular/animations';
-import { translations, translationsInfantil, languageLabels, languageFlags, majorIntroductions, childIntroductions, majorMeta, childMeta, type Language } from './translations';
+import {
+  translations,
+  translationsInfantil,
+  languageLabels,
+  languageFlags,
+  majorIntroductions,
+  childIntroductions,
+  majorMeta,
+  childMeta,
+  footerTexts,
+  type Language
+} from './translations';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +22,8 @@ import { translations, translationsInfantil, languageLabels, languageFlags, majo
     trigger('fadeIn', [
       state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
       state('hidden', style({ opacity: 0, transform: 'translateY(10px)' })),
-      transition('hidden => visible', [
-        animate('400ms ease-in-out')
-      ]),
-      transition('visible => hidden', [
-        animate('200ms ease-in-out')
-      ])
+      transition('hidden => visible', [animate('400ms ease-in-out')]),
+      transition('visible => hidden', [animate('200ms ease-in-out')])
     ])
   ],
   templateUrl: './app.component.html',
@@ -36,27 +43,35 @@ export class AppComponent {
   readonly languages: Language[] = ['val', 'es', 'en', 'eu'];
   readonly isAudioPlaying = signal(false);
 
-  readonly animationState = computed(() => this.isContentVisible() ? 'visible' : 'hidden');
-  readonly currentTranslation = computed(() => this.translations[this.currentLanguage()]);
-  readonly currentTranslationInfantil = computed(() => this.translationsInfantil[this.currentLanguage()]);
-  readonly currentMajorIntroduction = computed(() => this.majorIntroductions[this.currentLanguage()]);
-  readonly currentChildIntroduction = computed(() => this.childIntroductions[this.currentLanguage()]);
-  readonly currentMajorMeta = computed(() => this.majorMeta[this.currentLanguage()]);
-  readonly currentChildMeta = computed(() => this.childMeta[this.currentLanguage()]);
+  readonly animationState = computed(() =>
+    this.isContentVisible() ? 'visible' : 'hidden'
+  );
+  readonly currentTranslation = computed(
+    () => this.translations[this.currentLanguage()]
+  );
+  readonly currentTranslationInfantil = computed(
+    () => this.translationsInfantil[this.currentLanguage()]
+  );
+  readonly currentMajorIntroduction = computed(
+    () => this.majorIntroductions[this.currentLanguage()]
+  );
+  readonly currentChildIntroduction = computed(
+    () => this.childIntroductions[this.currentLanguage()]
+  );
+  readonly currentMajorMeta = computed(
+    () => this.majorMeta[this.currentLanguage()]
+  );
+  readonly currentChildMeta = computed(
+    () => this.childMeta[this.currentLanguage()]
+  );
+  readonly currentFooterText = computed(
+    () => footerTexts[this.currentLanguage()]
+  );
 
   private voices: SpeechSynthesisVoice[] = [];
   private audioPlayer: HTMLAudioElement | null = null;
 
   constructor() {
-    const savedLanguage = localStorage.getItem('falla-language') as Language;
-    if (savedLanguage && (savedLanguage === 'val' || savedLanguage === 'es' || savedLanguage === 'en' || savedLanguage === 'eu')) {
-      this.currentLanguage.set(savedLanguage);
-    }
-
-    effect(() => {
-      localStorage.setItem('falla-language', this.currentLanguage());
-    });
-
     this.initVoices();
     this.initAudioPlayer();
   }
@@ -64,19 +79,19 @@ export class AppComponent {
   private initAudioPlayer(): void {
     this.audioPlayer = new Audio('/sound/rm.opus');
     this.audioPlayer.preload = 'auto';
-    
+
     this.audioPlayer.addEventListener('play', () => {
       this.isAudioPlaying.set(true);
     });
-    
+
     this.audioPlayer.addEventListener('pause', () => {
       this.isAudioPlaying.set(false);
     });
-    
+
     this.audioPlayer.addEventListener('ended', () => {
       this.isAudioPlaying.set(false);
     });
-    
+
     this.audioPlayer.addEventListener('error', () => {
       this.isAudioPlaying.set(false);
     });
@@ -143,9 +158,7 @@ export class AppComponent {
 
   private buildPlainText(title: string, parts: string[]): string {
     const cleaned = parts.map(p =>
-      p
-        .replace(/<br\s*\/?>/gi, '. ')
-        .replace(/<[^>]+>/g, '')
+      p.replace(/<br\s*\/?>/gi, '. ').replace(/<[^>]+>/g, '')
     );
     return [title, ...cleaned].join('. ');
   }
@@ -214,7 +227,9 @@ export class AppComponent {
     const preferredTags = languageMap[lang];
 
     for (const tag of preferredTags) {
-      const candidates = this.voices.filter(voice => voice.lang.toLowerCase().startsWith(tag.toLowerCase()));
+      const candidates = this.voices.filter(voice =>
+        voice.lang.toLowerCase().startsWith(tag.toLowerCase())
+      );
       if (candidates.length > 0) {
         const ranked = candidates.sort((a, b) => {
           const scoreA = this.scoreVoice(a);
@@ -250,10 +265,15 @@ export class AppComponent {
       score += 2;
     }
 
-    if (name.includes('google') || name.includes('microsoft') || name.includes('apple')) {
+    if (
+      name.includes('google') ||
+      name.includes('microsoft') ||
+      name.includes('apple')
+    ) {
       score += 1;
     }
 
     return score;
   }
 }
+

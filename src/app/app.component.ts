@@ -11,6 +11,8 @@ import {
   majorMeta,
   childMeta,
   footerTexts,
+  listenLabels,
+  playingLabels,
   type Language
 } from './translations';
 
@@ -42,6 +44,7 @@ export class AppComponent {
   readonly isContentVisible = signal(true);
   readonly languages: Language[] = ['val', 'es', 'en', 'eu'];
   readonly isAudioPlaying = signal(false);
+  readonly isTTSPlaying = signal(false);
 
   readonly animationState = computed(() =>
     this.isContentVisible() ? 'visible' : 'hidden'
@@ -66,6 +69,12 @@ export class AppComponent {
   );
   readonly currentFooterText = computed(
     () => footerTexts[this.currentLanguage()]
+  );
+  readonly currentListenLabel = computed(
+    () => listenLabels[this.currentLanguage()]
+  );
+  readonly currentPlayingLabel = computed(
+    () => playingLabels[this.currentLanguage()]
   );
 
   private voices: SpeechSynthesisVoice[] = [];
@@ -119,14 +128,7 @@ export class AppComponent {
     if (!speechSynthesis) {
       return;
     }
-    if (speechSynthesis.speaking && !speechSynthesis.paused) {
-      speechSynthesis.pause();
-      return;
-    }
-    if (speechSynthesis.paused) {
-      speechSynthesis.resume();
-      return;
-    }
+    speechSynthesis.cancel();
     if (this.audioPlayer) {
       this.audioPlayer.pause();
       this.audioPlayer.currentTime = 0;
@@ -143,16 +145,11 @@ export class AppComponent {
     if (!speechSynthesis) {
       return;
     }
-    if (speechSynthesis.speaking && !speechSynthesis.paused) {
-      speechSynthesis.pause();
-      return;
-    }
-    if (speechSynthesis.paused) {
-      speechSynthesis.resume();
-      return;
-    }
+    speechSynthesis.cancel();
     const translation = this.currentTranslationInfantil();
-    const text = this.buildPlainText(translation.title, translation.content);
+    const introduction = this.currentChildIntroduction();
+    const allParts = [...introduction.content, ...translation.content];
+    const text = this.buildPlainText(translation.title, allParts);
     this.playText(text);
   }
 
@@ -168,15 +165,16 @@ export class AppComponent {
     if (!speechSynthesis) {
       return;
     }
-
     speechSynthesis.cancel();
-
+    this.isTTSPlaying.set(true);
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = this.getSpeechLang(this.currentLanguage());
     const voice = this.getVoiceForLanguage(this.currentLanguage());
     if (voice) {
       utterance.voice = voice;
     }
+    utterance.onend = () => this.isTTSPlaying.set(false);
+    utterance.onerror = () => this.isTTSPlaying.set(false);
     speechSynthesis.speak(utterance);
   }
 

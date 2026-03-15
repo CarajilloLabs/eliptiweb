@@ -42,18 +42,15 @@
         <button
           type="button"
           class="audio-btn"
-          [class.playing]="isAudioPlaying() && currentLanguage() === 'val'"
+          [class.playing]="isTTSPlaying()"
           (click)="playMainCritique()"
         >
           <span class="audio-icon">
             <span class="audio-wave"></span>
           </span>
           <span class="audio-label">
-            <span *ngIf="currentLanguage() === 'val' && isAudioPlaying()">Reproduint...</span>
-            <span *ngIf="currentLanguage() === 'val' && !isAudioPlaying()">Escoltar crítica</span>
-            <span *ngIf="currentLanguage() === 'es'">Escuchar crítica</span>
-            <span *ngIf="currentLanguage() === 'en'">Listen to critique</span>
-            <span *ngIf="currentLanguage() === 'eu'">Kritika entzun</span>
+            <span *ngIf="isTTSPlaying()">{{ currentPlayingLabel() }}</span>
+            <span *ngIf="!isTTSPlaying()">{{ currentListenLabel() }}</span>
           </span>
         </button>
 
@@ -89,9 +86,11 @@
         </section>
 
         <div class="critique-content">
-          <p *ngFor="let paragraph of currentTranslation().content" class="paragraph">
-            {{ paragraph }}
-          </p>
+          <p
+            *ngFor="let paragraph of currentTranslation().content"
+            class="paragraph"
+            [innerHTML]="paragraph"
+          ></p>
         </div>
 
         <div class="separator"></div>
@@ -102,16 +101,15 @@
         <button
           type="button"
           class="audio-btn"
+          [class.playing]="isTTSPlaying()"
           (click)="playChildCritique()"
         >
           <span class="audio-icon">
             <span class="audio-wave"></span>
           </span>
           <span class="audio-label">
-            <span *ngIf="currentLanguage() === 'val'">Escoltar crítica infantil</span>
-            <span *ngIf="currentLanguage() === 'es'">Escuchar crítica infantil</span>
-            <span *ngIf="currentLanguage() === 'en'">Listen to children&#39;s critique</span>
-            <span *ngIf="currentLanguage() === 'eu'">Haurren kritika entzun</span>
+            <span *ngIf="isTTSPlaying()">{{ currentPlayingLabel() }}</span>
+            <span *ngIf="!isTTSPlaying()">{{ currentListenLabel() }}</span>
           </span>
         </button>
 

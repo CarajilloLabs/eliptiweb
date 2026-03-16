@@ -164,6 +164,20 @@
   gap: 2rem;
 }
 
+.section-toggle {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-toggle .lang-btn {
+  min-width: 180px;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
 .logo-container {
   margin-bottom: 2rem;
   display: flex;
@@ -188,7 +202,7 @@
 
 .logo-img {
   display: block;
-  max-width: 150px;
+  max-width: 200px;
   height: auto;
 }
 
@@ -394,9 +408,8 @@
   }
 
   .critiques-container {
-    flex-direction: row;
-    gap: 2rem;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
   }
 
   .critique-card {
@@ -410,6 +423,7 @@
 
   .paragraph {
     font-size: 1.125rem;
+    text-align: center;
   }
 
   .falla-meta-line,
@@ -443,6 +457,19 @@
     gap: 0.5rem;
     flex-wrap: wrap;
     padding: 0.25rem 0.5rem 0.75rem;
+  }
+
+  .section-toggle {
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .section-toggle .lang-btn {
+    width: 100%;
+    max-width: 260px;
+    font-size: 1.05rem;
+    padding: 0.9rem 1.6rem;
   }
 
   .lang-btn {
@@ -485,7 +512,7 @@
   }
 
   .logo-img {
-    max-width: 90px;
+    max-width: 130px;
   }
 
   .footer {

@@ -35,8 +35,31 @@
       </div>
     </div>
 
+    <div class="section-toggle">
+      <button
+        type="button"
+        class="lang-btn"
+        [class.active]="activeSection() === 'major'"
+        (click)="showSection('major')"
+      >
+        {{ currentTranslation().title }}
+      </button>
+      <button
+        type="button"
+        class="lang-btn"
+        [class.active]="activeSection() === 'child'"
+        (click)="showSection('child')"
+      >
+        {{ currentTranslationInfantil().title }}
+      </button>
+    </div>
+
     <div class="critiques-container">
-      <article class="critique-card" [@fadeIn]="animationState()">
+      <article
+        class="critique-card"
+        [@fadeIn]="animationState()"
+        *ngIf="activeSection() === 'major'"
+      >
         <h1 class="critique-title">{{ currentTranslation().title }}</h1>
 
         <button
@@ -96,7 +119,11 @@
         <div class="separator"></div>
       </article>
 
-      <article class="critique-card critique-card-infantil" [@fadeIn]="animationState()">
+      <article
+        class="critique-card critique-card-infantil"
+        [@fadeIn]="animationState()"
+        *ngIf="activeSection() === 'child'"
+      >
         <h1 class="critique-title">{{ currentTranslationInfantil().title }}</h1>
         <button
           type="button"

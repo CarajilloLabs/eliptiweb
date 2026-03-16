@@ -45,6 +45,7 @@ export class AppComponent {
   readonly languages: Language[] = ['val', 'es', 'en', 'eu'];
   readonly isAudioPlaying = signal(false);
   readonly isTTSPlaying = signal(false);
+  readonly activeSection = signal<'major' | 'child'>('major');
 
   readonly animationState = computed(() =>
     this.isContentVisible() ? 'visible' : 'hidden'
@@ -128,6 +129,11 @@ export class AppComponent {
     if (!speechSynthesis) {
       return;
     }
+    if (this.isTTSPlaying()) {
+      speechSynthesis.cancel();
+      this.isTTSPlaying.set(false);
+      return;
+    }
     speechSynthesis.cancel();
     if (this.audioPlayer) {
       this.audioPlayer.pause();
@@ -143,6 +149,11 @@ export class AppComponent {
   playChildCritique(): void {
     const speechSynthesis = window.speechSynthesis;
     if (!speechSynthesis) {
+      return;
+    }
+    if (this.isTTSPlaying()) {
+      speechSynthesis.cancel();
+      this.isTTSPlaying.set(false);
       return;
     }
     speechSynthesis.cancel();
@@ -189,6 +200,18 @@ export class AppComponent {
       return 'en-GB';
     }
     return 'eu-ES';
+  }
+
+  showSection(section: 'major' | 'child'): void {
+    if (section === this.activeSection()) {
+      return;
+    }
+    if (this.audioPlayer) {
+      this.audioPlayer.pause();
+      this.audioPlayer.currentTime = 0;
+    }
+    window.speechSynthesis.cancel();
+    this.activeSection.set(section);
   }
 
   private initVoices(): void {

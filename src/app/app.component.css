@@ -277,12 +277,16 @@
 
 .falla-text-with-image {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
 }
 
 .falla-inline-image {
-  float: right;
-  margin-left: 1.5rem;
-  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+  margin: 0;
 }
 
 .falla-inline-img {
@@ -307,6 +311,11 @@
 
 .falla-intro .logo-container {
   margin-bottom: 0;
+}
+
+.falla-intro {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .audio-btn {
@@ -530,7 +539,6 @@
   }
 
   .falla-inline-image {
-    float: none;
     margin: 0 0 1rem 0;
     text-align: center;
   }

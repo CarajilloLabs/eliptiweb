@@ -28,48 +28,52 @@ export const majorIntroductions: Record<Language, FallaIntroduction> = {
     logoSrc: 'img/afonats.png',
     logoAlt: 'Cartell Falla Major "Afonats"',
     content: [
-      'Esta falla, amb el lema "Afonats", ens parla de tot allò que, com si fora el mar, ens pot engolir si no anem amb compte.',
-      'El mar simbolitza la vida mateixa: a voltes tranquil·la, a voltes perillosa. Entre onades i criatures marines apareixen personatges que representen una societat que moltes vegades viu massa de pressa, sense mirar on navega.',
-      '"Afonats" ens mostra com podem acabar perdent el rumb, ofegats per l\'ambició, la desinformació, la falta de valors o la indiferència. Personatges que semblen avançar, però en realitat s\'enfonsen.',
-      'Amb una estètica marinera, plena de moviment, color i fantasia, la falla combina crítica i humor per recordar-nos que no tot el que brilla a la superfície és segur.',
-      'Esta falla ens convida a alçar el cap, agafar el timó i decidir cap a on volem anar, abans que siga massa tard.',
-      'Perquè si no sabem navegar junts, tots podem acabar… afonats.'
+      '<b>ESCENA DE BENVINGUDA:</b>',
+      'Cada any, quan el calendari avança cap a març, Gandia es transforma en un escenari on la ironia, la memòria i la mirada crítica recuperen el seu lloc natural. Entre carrers que vibren, monuments que parlen i veus que s’alcen, les falles tornen a ser el ritual col·lectiu que ens obliga a mirar-nos de front.',
+      'Enguany, en un context social, polític i econòmic que continua generant incerteses, la comissió de la Falla Plaça El·líptica, de la mà dels artistes Palacio i Serra, presenta un lema tan nítid com colpidor: Afonats.',
+      'Afonats parla de nosaltres. Parla d’un país cansat d’escoltar promeses que s’esvaeixen com l’escuma de la mar. Parla d’unes institucions que sovint naveguen sense rumb, atrapades entre decisions improvisades i equilibris interessats.',
+      'Però també parla de Gandia. D’una ciutat que encara arrossega batalles quotidianes: la gestió desigual dels barris, la convivència entre desenvolupament i patrimoni, la burocràcia que tot ho alentix i les tensions polítiques entre formacions més preocupades per marcar perfil que per fer avançar el municipi. I, com sempre, parla del veí de peu, que continua remant, siga com siga i contra qui siga.',
+      'Aquest monument no és una fantasia marinera; és un mirall. Però també és un recordatori. Perquè, fins i tot afonats, sempre queda un últim glop d’aire, una última espenta, una última manera de tornar a pujar. Igual que la nostra comissió, que en cinquanta anys ha après a caure i a ressorgir, a enfonsar-se i a tornar a brillar.',
+      'Benvinguts a Afonats: un viatge a les profunditats del que som i del que encara podem arribar a ser, si trobem, per fi, el coratge d’eixir a respirar.'
     ]
   },
   es: {
     logoSrc: 'img/afonats.png',
     logoAlt: 'Cartell Falla Major "Afonats"',
     content: [
-      'Esta falla, con el lema "Afonats", nos habla de todo aquello que, como si fuera el mar, puede engullirnos si no vamos con cuidado.',
-      'El mar simboliza la propia vida: a veces tranquila, a veces peligrosa. Entre olas y criaturas marinas aparecen personajes que representan una sociedad que muchas veces vive demasiado deprisa, sin mirar hacia dónde navega.',
-      '"Afonats" nos muestra cómo podemos acabar perdiendo el rumbo, ahogados por la ambición, la desinformación, la falta de valores o la indiferencia. Personajes que parecen avanzar, pero en realidad se hunden.',
-      'Con una estética marinera, llena de movimiento, color y fantasía, la falla combina crítica y humor para recordarnos que no todo lo que brilla en la superficie es seguro.',
-      'Esta falla nos invita a alzar la cabeza, coger el timón y decidir hacia dónde queremos ir, antes de que sea demasiado tarde.',
-      'Porque si no sabemos navegar juntos, todos podemos acabar… hundidos.'
+      '<b>ESCENA DE BIENVENIDA:</b>',
+      'Cada año, cuando el calendario avanza hacia marzo, Gandia se transforma en un escenario donde la ironía, la memoria y la mirada crítica recuperan su lugar natural. Entre calles que vibran, monumentos que hablan y voces que se alzan, las fallas vuelven a ser el ritual colectivo que nos obliga a mirarnos de frente.',
+      'Este año, en un contexto social, político y económico que sigue generando incertidumbres, la comisión de la Falla Plaza Elíptica, de la mano de los artistas Palacio y Serra, presenta un lema tan nítido como impactante: Afonats.',
+      'Afonats habla de nosotros. Habla de un país cansado de escuchar promesas que se desvanecen como la espuma del mar. Habla de unas instituciones que a menudo navegan sin rumbo, atrapadas entre decisiones improvisadas y equilibrios interesados.',
+      'Pero también habla de Gandia. De una ciudad que aún arrastra batallas cotidianas: la gestión desigual de los barrios, la convivencia entre desarrollo y patrimonio, la burocracia que todo lo ralentiza y las tensiones políticas entre formaciones más preocupadas por marcar perfil que por hacer avanzar el municipio. Y, como siempre, habla del vecino de a pie, que sigue remando, sea como sea y contra quien sea.',
+      'Este monumento no es una fantasía marinera; es un espejo. Pero también es un recordatorio. Porque, incluso afonats, siempre queda un último sorbo de aire, un último empujón, una última manera de volver a subir. Igual que nuestra comisión, que en cincuenta años ha aprendido a caer y a resurgir, a hundirse y a volver a brillar.',
+      'Bienvenidos a Afonats: un viaje a las profundidades de lo que somos y de lo que aún podemos llegar a ser, si encontramos, por fin, el valor de salir a respirar.'
     ]
   },
   en: {
     logoSrc: 'img/afonats.png',
     logoAlt: 'Cartell Falla Major "Afonats"',
     content: [
-      'This falla, with the motto "Afonats", speaks about everything that, like the sea, can swallow us if we are not careful.',
-      'The sea symbolizes life itself: sometimes calm, sometimes dangerous. Among waves and sea creatures appear characters who represent a society that often lives too fast, without looking where it is sailing.',
-      '"Afonats" shows us how we can end up losing our course, drowned by ambition, misinformation, lack of values or indifference. Characters who seem to move forward but are actually sinking.',
-      'With a seafaring aesthetic full of movement, colour and fantasy, the falla blends critique and humour to remind us that not everything that shines on the surface is safe.',
-      'This falla invites us to lift our heads, take the helm and decide where we want to go before it is too late.',
-      'Because if we do not know how to sail together, we can all end up… sunk.'
+      '<b>WELCOME SCENE:</b>',
+      'Every year, as the calendar moves towards March, Gandia is transformed into a stage where irony, memory and a critical gaze recover their natural place. Between vibrant streets, speaking monuments and rising voices, the Fallas once again become the collective ritual that forces us to look at ourselves head‑on.',
+      'This year, in a social, political and economic context that continues to generate uncertainty, the Plaza Elíptica Falla committee, together with the artists Palacio and Serra, presents a motto as clear as it is striking: Afonats.',
+      'Afonats speaks about us. It speaks of a country tired of listening to promises that fade away like sea foam. It speaks of institutions that often sail without a course, trapped between improvised decisions and carefully balanced interests.',
+      'But it also speaks of Gandia. Of a city that still drags along daily battles: the unequal management of neighbourhoods, the coexistence between development and heritage, the bureaucracy that slows everything down, and political tensions between parties more worried about shaping their image than about moving the town forward. And, as always, it speaks of the ordinary neighbour, who keeps rowing, no matter how and against whoever it may be.',
+      'This monument is not a seafaring fantasy; it is a mirror. But it is also a reminder. Because even when we are “afonats”, there is always one last breath of air, one last push, one last way to rise again. Just like our committee, which in fifty years has learned to fall and to rise again, to sink and to shine once more.',
+      'Welcome to Afonats: a journey into the depths of who we are and of what we can still become, if we finally find the courage to come up for air.'
     ]
   },
   eu: {
     logoSrc: 'img/afonats.png',
     logoAlt: 'Cartell Falla Major "Afonats"',
     content: [
-      '"Afonats" leloa duen falla honek, itsaso balitz bezala, kontuz ibiltzen ez bagara gu irents dezakeen guztiaz hitz egiten digu.',
-      'Itsasoak bizitza bera sinbolizatzen du: batzuetan lasaia, batzuetan arriskutsua. Olatuen eta itsas izakien artean, askotan azkarregi bizi den eta nora doan begiratzen ez duen gizartea ordezkatzen duten pertsonaiak agertzen dira.',
-      '"Afonats" obrak erakusten digu nola gal dezakegun norabidea, anbizioak, desinformazioak, balioen faltak edo axolagabekeriak itoak. Aurrera doazela ematen duten pertsonaiak dira, baina benetan hondoratzen ari dira.',
-      'Itxura marineroarekin, mugimenduz, kolorez eta fantasiáz betea, falla honek kritika eta umorea uztartzen ditu, gainazalean distiratzen duen guztiak ez dela segurua gogorarazteko.',
-      'Falla honek burua altxatzera, lema hartzera eta berandu izan baino lehen nora joan nahi dugun erabakitzera gonbidatzen gaitu.',
-      'Elkarrekin nabigatzen ez badakigu, guztiok amai dezakegu… hondoratuta.'
+      '<b>ONGI ETORRITZEKO ESZENA:</b>',
+      'Urtero, egutegia martxorantz doanean, Gandia bihurtzen da ironia, oroimena eta begirada kritikoa bere tokira itzultzen diren agertoki. Kale bizietan, hitz egiten duten monumentuen eta altxatzen diren ahotsen artean, Falles berriz ere bihurtzen dira aurrez aurre begiratzera behartzen gaituen erritu kolektiboa.',
+      'Aurten, ziurgabetasunak sortzen jarraitzen duen testuinguru sozial, politiko eta ekonomiko batean, Plaça El·líptica Falla‑ko batzordeak, Palacio eta Serra artistekin batera, lelo argi eta kolpagarri hau aurkezten du: Afonats.',
+      'Afonats guaz ari da. Hitza ematen digute itsasoaren aparra bezala desagertzen diren promesez nekatutako herrialde bati buruz. Norabiderik gabe nabigatzen duten erakundeez ere ari da, erabaki inprobisatuen eta interesdun oreken artean harrapatuta.',
+      'Baina Gandiaz ere mintzo da. Eguneroko borrokak arrastaka daramatzan hiri batez: auzoen kudeaketa desorekatuaz, garapena eta ondarea bateratzeko zailtasunaz, dena moteltzen duen burokraziaz eta udalerria aurrera eramatea baino gehiago irudia zaintzeaz arduratzen diren indar politikoen tentsioez. Eta, beti bezala, oinezko auzoarrari buruz hitz egiten du, nolanahi ere eta edonoren aurka arraunean jarraitzen duen horri buruz.',
+      'Monumentu hau ez da itsas fantasia bat; ispilu bat da. Baina oroigarri bat ere bada. Izan ere, hondoratuta gaudenean ere, beti geratzen da aire‑zurrutada bat, azken bultzada bat, berriro igotzeko azken modu bat. Gure komisioen antzera, berrogeita hamar urteotan erortzen eta berriz altxatzen, hondoratzen eta berriro distiratzen ikasi baitu.',
+      'Ongi etorri Afonats mundura: garenaren eta oraindik izan gaitezkeenaren sakonerako bidaia bat, azkenean arnasa hartzera ausartzen bagara.'
     ]
   }
 };

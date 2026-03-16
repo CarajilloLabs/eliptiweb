@@ -1,5 +1,7 @@
 import { criticaMajorVal } from './critica-major-val';
 import { criticaMajorEs } from './critica-major-es';
+import { criticaMajorEn } from './critica-major-en';
+import { criticaMajorEu } from './critica-major-eu';
 
 export type Language = 'val' | 'es' | 'en' | 'eu';
 
@@ -210,11 +212,11 @@ export const translations: Record<Language, Translations> = {
   },
   en: {
     title: 'Main Falla',
-    content: criticaMajorEs
+    content: criticaMajorEn
   },
   eu: {
     title: 'Falla Nagusia',
-    content: criticaMajorEs
+    content: criticaMajorEu
   }
 };
 
